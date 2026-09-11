@@ -54,8 +54,8 @@ def cadastrar_peca():
                 print("\nCaixa fechada com 10 peças!")
                 caixa_atual.clear()
 
-        print("\nPeça cadastrada com sucesso.")
-        print("Resultado:", peca["status"])
+            print("\nPeça cadastrada com sucesso.")
+            print("Resultado:", peca["status"])
  
         if not aprovada:
             print("Motivo:", resultado)
