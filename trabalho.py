@@ -1,4 +1,3 @@
-from operator import truediv
 
 
 print("CONTROLE DE PRODUÇÃO E QUALIDADE\n")
@@ -24,33 +23,30 @@ match opcao:
     case _:
         print("Opção inválida")
 
-## (id, peso, cor e comprimento)
-##  - Peso entre 95g e 105g
-##  - Cor azul ou verde
-##  - Comprimento entre 10cm e 20cm
 
 def ver_peso(peso):
+    # verifica o peso da peca
     if peso >= 95 and peso <= 105:
         return True
     else:
         return False
 
 def ver_cor(cor):
+    # verifica a cor da peca
     if cor == "azul" or cor == "verde":
         return True
     else:
         return False
 
 def ver_comprimento(comprimento):
+    # verifica o comprimento da peca
     if comprimento >= 10 and comprimento <= 20:
         return True
     else:
         return False
 
 
-print(ver_peso(100))
-print(ver_cor("verde"))
-print(ver_comprimento(15))
+
 
 
 
