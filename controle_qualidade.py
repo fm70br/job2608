@@ -1,40 +1,62 @@
 # Sistema de Controle de Produção e Qualidade
-# Código gerado pelo copilot
+#
+# Trabalho apresentado por: Fabio Minami 
+# Disciplina: Algoritmos e Lógica de Programação 
+# Curso: Inteligência Artificial e Automação Digital
+# UNIFECAF
+#
+# 2026-09-25
 
-pecas = []
-caixas_fechadas = []
-caixa_atual = []
+# listas 
+pecas = [] # todas as pecas
+caixas_fechadas = [] # lista de caixas fechadas
+caixa_atual = [] # caixa aberta
 
+# constantes com os critérios de qualidade e tamanho da caixa
+PESO_MIN = 95
+PESO_MAX = 105
+CORES_VALIDAS = ("azul", "verde")
+COMPRIMENTO_MIN = 10
+COMPRIMENTO_MAX = 20
 CAPACIDADE_CAIXA = 10
 
 def validar_peca(peso, cor, comprimento):
-
+    """
+    Confere os critérios de qualidade.
+    Retorna verdadeiro ou falso, e a lista de motivos de reprovação.    
+    """
     motivos = []
 
-    if peso < 95 or peso > 105:
+    if peso < PESO_MIN or peso > PESO_MAX:
         motivos.append("Peso fora do padrão")
 
-    if cor.lower() not in ["azul", "verde"]:
+    if cor.lower() not in CORES_VALIDAS:
         motivos.append("Cor inválida")
 
-    if comprimento < 10 or comprimento > 20:
+    if comprimento < COMPRIMENTO_MIN or comprimento > COMPRIMENTO_MAX:
         motivos.append("Comprimento fora do padrão")
 
     if len(motivos) == 0:
-        return True, "Aprovada"
+        return True, "OK"
     else:
         return False, ", ".join(motivos)
 
 def cadastrar_peca():
+    """
+    Guarda a peça aprovada na caixa aberta.
+    Ao atingir a capacidade, fecha a caixa e inicia uma nova.
+    """    
     global caixa_atual
 
     try:
+        # dados da peca informados pelo usuario
         id_peca = input("ID da peça: ")
         peso = float(input("Peso (g): "))
         cor = input("Cor: ")
         comprimento = float(input("Comprimento (cm): "))
         aprovada, resultado = validar_peca(peso, cor, comprimento)
 
+        # dicionario dos valores das peças 
         peca = {
             "id": id_peca,
             "peso": peso,
@@ -43,26 +65,35 @@ def cadastrar_peca():
             "status": "Aprovada" if aprovada else "Reprovada",
             "motivo": resultado
         }
- 
+
+        # adiciona peca a lista pecas
         pecas.append(peca)
 
+        # se a peca for aprovada
         if aprovada:
+            # adiciona a pecaa a caixa atual
             caixa_atual.append(id_peca)
-
+            # a quantidade de pecas chegou ao limite da caixa
             if len(caixa_atual) == CAPACIDADE_CAIXA:
+                # fecha a caixa
                 caixas_fechadas.append(caixa_atual.copy())
                 print("\nCaixa fechada com 10 peças!")
                 caixa_atual.clear()
 
+            # avisa o usuario
             print("\nPeça cadastrada com sucesso.")
             print("Resultado:", peca["status"])
- 
+
+        # se a peca for reprovada
         if not aprovada:
+            # avisa o usuario
             print("Motivo:", resultado)
 
     except ValueError:
+        # avisa o usuario sobre erro de digitação
         print("Erro: informe valores numéricos válidos.")
 
+# exibe a listagem de todas as pecas guardadas na lista de pecas
 def listar_pecas():
     if len(pecas) == 0:
         print("\nNenhuma peça cadastrada.")
@@ -70,9 +101,11 @@ def listar_pecas():
  
     print("\n=== PEÇAS CADASTRADAS ===")
 
+    # para cada item na lista, exibir...
     for peca in pecas:
-        print("ID:", peca["id"], "| Status:", peca["status"], "| Motivo:", peca["motivo"])
+        print("ID:", peca["id"], peca["peso"], peca["cor"], peca["comprimento"], "| Status:", peca["status"], "| Motivo:", peca["motivo"])
 
+# apaga um item da lista de pecas
 def remover_peca():
     id_remover = input("Informe o ID da peça: ")
  
@@ -82,8 +115,10 @@ def remover_peca():
             print("Peça removida com sucesso.")
             return
 
+    # peca nao encontrada, avisar usuario
     print("Peça não encontrada.")
 
+# exibe a listagem de caixas fechadas
 def listar_caixas():
     if len(caixas_fechadas) == 0:
         print("\nNenhuma caixa fechada.")
@@ -91,16 +126,19 @@ def listar_caixas():
  
     print("\n=== CAIXAS FECHADAS ===")
 
+    # variavel contador de caixas fechadas
     numero = 1
 
     for caixa in caixas_fechadas:
         print("Caixa", numero, ":", caixa)
         numero += 1
 
-def gerar_relatorio():
+# exibe a quantide de itens nas listas
+def gerar_relatorio():    
     aprovadas = []
     reprovadas = []
 
+    # conta a quantidade de aprovadas e reprovadas uma a uma
     for peca in pecas:
         if peca["status"] == "Aprovada":
             aprovadas.append(peca)
@@ -126,6 +164,7 @@ def menu():
 
         opcao = input("Escolha uma opção: ")
 
+        # sem usar case (retrocompatibilidade)
         if opcao == "1":
             cadastrar_peca()
         elif opcao == "2":
