@@ -30,10 +30,9 @@ O programa mantém três estruturas de dados em memória durante a execução:
 Fluxo geral de uma peça:
 
 1. O usuário informa **id, peso, cor e comprimento**.
-2. O sistema valida os dados.
-3. A peça é avaliada segundo os critérios de qualidade.
-4. Se **aprovada**, ela é adicionada à caixa aberta. Ao atingir 10 peças, a caixa é fechada e uma nova é iniciada automaticamente.
-5. Se **reprovada**, o(s) motivo(s) da reprovação são registrados junto com a peça — o sistema verifica **todos os critérios**, não parando no primeiro erro, para que uma peça possa ter mais de um motivo de reprovação.
+2. A peça é avaliada segundo os critérios de qualidade.
+3. Se **aprovada**, ela é adicionada à caixa aberta. Ao atingir 10 peças, a caixa é fechada e uma nova é iniciada automaticamente.
+4. Se **reprovada**, o(s) motivo(s) da reprovação são registrados junto com a peça — o sistema verifica **todos os critérios**, não parando no primeiro erro, para que uma peça possa ter mais de um motivo de reprovação.
 
 Ao remover uma peça aprovada do cadastro, o sistema **reorganiza automaticamente as caixas**, refazendo o empacotamento das peças aprovadas restantes, para que nenhuma caixa fique com contagem inconsistente.
 
@@ -47,11 +46,11 @@ Uma peça é **aprovada** somente se atender às três condições ao mesmo temp
 | Cor | **azul** ou **verde** |
 | Comprimento | entre **10 cm** e **20 cm** (inclusive) |
 
-Peças fora de qualquer uma dessas faixas são reprovadas, com o(s) motivo(s) específico(s) registrado(s).
+As peças que não estiverem dentro dessas faixas são reprovadas, e cada critério fora do padrão é registrado.
 
 ## Estrutura do código
 
-O arquivo `controle_qualidade.py` está organizado em blocos de funções, cada uma com uma única responsabilidade:
+O arquivo `controle_qualidade.py` está organizado em blocos de funções:
 
 ```
 controle_qualidade.py
@@ -71,11 +70,11 @@ controle_qualidade.py
 ## Requisitos
 
 - **Python 3.8 ou superior**
-- Nenhuma biblioteca externa é necessária (o programa usa apenas recursos nativos da linguagem)
+- Não há necessidade de instalação de nenhuma biblioteca externa (o programa usa somente os recursos nativos da linguagem)
 
 ## Como executar
 
-1. Baixe ou clone o repositório:
+1. Clone o repositório:
 
    ```bash
    git clone [<URL-do-repositório>](https://github.com/fm70br/job2608.git)
@@ -113,11 +112,11 @@ Escolha uma opção:
 
 | Opção | O que faz |
 |---|---|
-| **1** | Cadastra uma nova peça: pede id, peso, cor e comprimento, avalia e informa se foi aprovada ou reprovada |
-| **2** | Lista todas as peças cadastradas, separadas em aprovadas e reprovadas (mostrando o motivo das reprovadas) |
-| **3** | Remove uma peça pelo id informado e, se necessário, reorganiza as caixas |
-| **4** | Mostra as caixas já fechadas (com os ids das peças) e o status da caixa aberta no momento |
-| **5** | Gera o relatório final: total de aprovadas, total de reprovadas com motivos, e quantidade de caixas utilizadas |
+| **1** | Cadastra uma nova peça: solicita id, peso, cor e comprimento. Avalia e informa se a peça foi aprovada ou reprovada |
+| **2** | Lista todas as peças cadastradas, separadas em aprovadas e reprovadas (exibe o motivo das reprovadas) |
+| **3** | Remove uma peça pelo id informado
+| **4** | Mostra as caixas já fechadas (com os ids das peças) e o estado da caixa aberta no momento |
+| **5** | Gera o relatório final: totais de: peças cadastradas, aprovadas, reprovadas, e quantidade de caixas fechadas |
 | **0** | Encerra o programa |
 
 ## Exemplos de entradas e saídas
@@ -127,7 +126,7 @@ Escolha uma opção:
 **Entrada:**
 ```
 Escolha uma opção: 1
-ID da peça: ID01
+ID da peça: id01
 Peso (g): 100
 Cor: azul
 Comprimento (cm): 15
@@ -144,7 +143,7 @@ Resultado: Aprovada
 **Entrada:**
 ```
 Escolha uma opção: 1
-ID da peça: ID02
+ID da peça: id02
 Peso (g): 120
 Cor: vermelha
 Comprimento (cm): 25
@@ -152,7 +151,7 @@ Comprimento (cm): 25
 
 **Saída:**
 ```
-Peça ID02 REPROVADA
+Peça id02 REPROVADA
 Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
 ```
 
@@ -176,8 +175,8 @@ Escolha uma opção: 2
 **Saída:**
 ```
 === PEÇAS CADASTRADAS ===
-ID: ID01 100.0 azul 15.0 | Status: Aprovada | Motivo: OK
-ID: ID02 120.0 vermelha 25.0 | Status: Reprovada | Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
+ID: id01 100.0 azul 15.0 | Status: Aprovada | Motivo: OK
+ID: id02 120.0 vermelha 25.0 | Status: Reprovada | Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
 ```
 
 ### Exemplo 5 — remover uma peça
@@ -185,7 +184,7 @@ ID: ID02 120.0 vermelha 25.0 | Status: Reprovada | Motivo: Peso fora do padrão,
 **Entrada:**
 ```
 Escolha uma opção: 3
-Informe o ID da peça: ID02
+Informe o ID da peça: id02
 ```
 
 **Saída:**
@@ -237,7 +236,7 @@ Encerrando o sistema. Até logo!
 
 ## Possíveis evoluções
 
-- Persistência dos dados em arquivo (CSV, JSON) ou banco de dados, mantendo o histórico entre execuções.
-- Integração com sensores (balança, sensor óptico, leitor de código de barras) para entrada automática dos dados, eliminando a digitação manual.
-- Exportação do relatório final em PDF ou planilha.
+- Persistência dos dados em arquivo (CSV, JSON) ou banco de dados, para manter o histórico entre execuções.
+- Integração com sensores (balança, sensor óptico, leitor de código de barras) para entrada automática dos dados.
+- Inclusão de mais detalhes no relatório final e exportação em PDF ou planilha.
 - Interface gráfica (desktop ou web) no lugar do menu em terminal.
