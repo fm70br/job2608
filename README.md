@@ -13,7 +13,6 @@ Protótipo em Python para automatizar o controle de qualidade e o armazenamento 
 - [Como executar](#como-executar)
 - [Passo a passo de uso (menu)](#passo-a-passo-de-uso-menu)
 - [Exemplos de entradas e saídas](#exemplos-de-entradas-e-saídas)
-- [Tratamento de erros](#tratamento-de-erros)
 - [Possíveis evoluções](#possíveis-evoluções)
 
 ---
@@ -31,7 +30,7 @@ O programa mantém três estruturas de dados em memória durante a execução:
 Fluxo geral de uma peça:
 
 1. O usuário informa **id, peso, cor e comprimento**.
-2. O sistema valida os dados (números, id não vazio e não duplicado).
+2. O sistema valida os dados.
 3. A peça é avaliada segundo os critérios de qualidade.
 4. Se **aprovada**, ela é adicionada à caixa aberta. Ao atingir 10 peças, a caixa é fechada e uma nova é iniciada automaticamente.
 5. Se **reprovada**, o(s) motivo(s) da reprovação são registrados junto com a peça — o sistema verifica **todos os critérios**, não parando no primeiro erro, para que uma peça possa ter mais de um motivo de reprovação.

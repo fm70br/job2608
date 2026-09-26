@@ -176,6 +176,11 @@ def menu():
             listar_caixas()
         elif opcao == "5":
             gerar_relatorio()
+        elif opcao == "6":
+            print(f"caixa_atual: {caixa_atual}")
+            print(f"pecas: {pecas}")
+            print(f"caixas_fechadas: {caixas_fechadas}")
+
         elif opcao == "0":
             print("Encerrando o sistema. Até logo!")
             break
