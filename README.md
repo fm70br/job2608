@@ -99,7 +99,7 @@ Escolha uma opção:
 | **2** | Lista todas as peças cadastradas, separadas em aprovadas e reprovadas (exibe o motivo das reprovadas) |
 | **3** | Remove uma peça pelo id informado
 | **4** | Mostra as caixas já fechadas (com os ids das peças) e o estado da caixa aberta no momento |
-| **5** | Gera o relatório final: totais de: peças cadastradas, aprovadas, reprovadas, e quantidade de caixas fechadas |
+| **5** | Gera o relatório final: totais de: peças cadastradas, aprovadas, reprovadas e quantidade de caixas fechadas |
 | **0** | Encerra o programa |
 
 ## Exemplos
@@ -134,17 +134,7 @@ Peça id02 REPROVADA
 Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
 ```
 
-### 3. fechamento automático de caixa (10ª peça aprovada)
-
-**Saída ao cadastrar a 10ª peça aprovada em sequência:**
-```
-Caixa fechada com 10 peças!
-
-Peça cadastrada com sucesso.
-Resultado: Aprovada
-```
-
-### 4. listar peças
+### 3. listar peças
 
 ```
 Escolha uma opção: 2
@@ -156,7 +146,7 @@ ID: id01 100.0 azul 15.0 | Status: Aprovada | Motivo: OK
 ID: id02 120.0 vermelha 25.0 | Status: Reprovada | Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
 ```
 
-### 5. remover uma peça
+### 4. remover uma peça
 
 ```
 Escolha uma opção: 3
@@ -165,6 +155,16 @@ Informe o ID da peça: id02
 
 ```
 Peça removida com sucesso.
+```
+
+### 5. fechamento automático de caixa (10ª peça aprovada)
+
+**Saída ao cadastrar a 10ª peça aprovada em sequência:**
+```
+Caixa fechada com 10 peças!
+
+Peça cadastrada com sucesso.
+Resultado: Aprovada
 ```
 
 ### 6. listar caixas fechadas
