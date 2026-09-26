@@ -4,19 +4,6 @@ Protótipo em Python para automatizar o controle de qualidade e o armazenamento 
 
 ---
 
-## Sumário
-
-- [Funcionamento do sistema](#funcionamento-do=sistema)
-- [Critérios de qualidade](#critérios-de-qualidade)
-- [Estrutura do código](#estrutura-do-código)
-- [Requisitos](#requisitos)
-- [Como executar](#como-executar)
-- [Passo a passo de uso (menu)](#passo-a-passo-de-uso-menu)
-- [Exemplos de entradas e saídas](#exemplos-de-entradas-e-saídas)
-- [Possíveis evoluções](#possíveis-evoluções)
-
----
-
 ## Funcionamento do sistema
 
 O programa mantém três estruturas de dados em memória durante a execução:
@@ -77,7 +64,7 @@ controle_qualidade.py
 1. Clone o repositório:
 
    ```bash
-   git clone [<URL-do-repositório>](https://github.com/fm70br/job2608.git)
+   git clone [https://github.com/fm70br/job2608.git](https://github.com/fm70br/job2608.git)
    cd job2608
    ```
 
