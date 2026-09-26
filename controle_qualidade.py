@@ -155,7 +155,7 @@ def gerar_relatorio():
 def menu():
 
     while True:
-        print("\n=== CONTROLE DE QUALIDADE DE PEÇAS ===")
+        print("\n===== CONTROLE DE QUALIDADE DE PEÇAS =====")
         print("1 - Cadastrar nova peça")
         print("2 - Listar peças")
         print("3 - Remover peça")
@@ -180,7 +180,6 @@ def menu():
             print(f"caixa_atual: {caixa_atual}")
             print(f"pecas: {pecas}")
             print(f"caixas_fechadas: {caixas_fechadas}")
-
         elif opcao == "0":
             print("Encerrando o sistema. Até logo!")
             break

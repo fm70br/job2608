@@ -19,8 +19,6 @@ Fluxo geral de uma peça:
 3. Se **aprovada**, ela é adicionada à caixa aberta. Ao atingir 10 peças, a caixa é fechada e uma nova é iniciada automaticamente.
 4. Se **reprovada**, o(s) motivo(s) da reprovação são registrados junto com a peça — o sistema verifica **todos os critérios**, não parando no primeiro erro, para que uma peça possa ter mais de um motivo de reprovação.
 
-Ao remover uma peça aprovada do cadastro, o sistema **reorganiza automaticamente as caixas**, refazendo o empacotamento das peças aprovadas restantes, para que nenhuma caixa fique com contagem inconsistente.
-
 ## Critérios de qualidade
 
 Uma peça é **aprovada** somente se atender às três condições ao mesmo tempo:
@@ -43,7 +41,7 @@ controle_qualidade.py
 ├── Estado do sistema (listas globais: pecas, caixa_atual, caixas_fechadas)
 ├── Funções 
 │   ├── validar_peca()              -> confere os critérios de qualidade
-│   ├── cadastrar_peca()            -> adiciona a peça à caixa e fecha ao atingir 10
+│   ├── cadastrar_peca()            -> adiciona peça a caixa e fecha ao atingir 10
 │   ├── listar_pecas()
 │   ├── remover_peca()
 │   ├── listar_caixas()
@@ -85,7 +83,7 @@ controle_qualidade.py
 Ao iniciar, o programa exibe:
 
 ```
-=== CONTROLE DE QUALIDADE DE PEÇAS ===
+===== CONTROLE DE QUALIDADE DE PEÇAS =====
 1 - Cadastrar nova peça
 2 - Listar peças
 3 - Remover peça
@@ -205,9 +203,3 @@ Escolha uma opção: 0
 Encerrando o sistema. Até logo!
 ```
 
-## Possíveis evoluções
-
-- Persistência dos dados em arquivo (CSV, JSON) ou banco de dados, para manter o histórico entre execuções.
-- Integração com sensores (balança, sensor óptico, leitor de código de barras) para entrada automática dos dados.
-- Inclusão de mais detalhes no relatório final e exportação em PDF ou planilha.
-- Interface gráfica (desktop ou web) no lugar do menu em terminal.
