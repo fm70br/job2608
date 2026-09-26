@@ -108,7 +108,6 @@ Escolha uma opção:
 
 ### 1. cadastro de peça aprovada
 
-**Entrada:**
 ```
 Escolha uma opção: 1
 ID da peça: id01
@@ -117,7 +116,6 @@ Cor: azul
 Comprimento (cm): 15
 ```
 
-**Saída:**
 ```
 Peça cadastrada com sucesso.
 Resultado: Aprovada
@@ -125,7 +123,6 @@ Resultado: Aprovada
 
 ### 2. cadastro de peça reprovada (com múltiplos motivos)
 
-**Entrada:**
 ```
 Escolha uma opção: 1
 ID da peça: id02
@@ -134,7 +131,6 @@ Cor: vermelha
 Comprimento (cm): 25
 ```
 
-**Saída:**
 ```
 Peça id02 REPROVADA
 Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
@@ -152,12 +148,10 @@ Resultado: Aprovada
 
 ### 4. listar peças
 
-**Entrada:**
 ```
 Escolha uma opção: 2
 ```
 
-**Saída:**
 ```
 === PEÇAS CADASTRADAS ===
 ID: id01 100.0 azul 15.0 | Status: Aprovada | Motivo: OK
@@ -166,25 +160,21 @@ ID: id02 120.0 vermelha 25.0 | Status: Reprovada | Motivo: Peso fora do padrão,
 
 ### 5. remover uma peça
 
-**Entrada:**
 ```
 Escolha uma opção: 3
 Informe o ID da peça: id02
 ```
 
-**Saída:**
 ```
 Peça removida com sucesso.
 ```
 
 ### 6. listar caixas fechadas
 
-**Entrada:**
 ```
 Escolha uma opção: 4
 ```
 
-**Saída:**
 ```
 === CAIXAS FECHADAS ===
 Caixa 1 : ['id01', 'id03', 'id04', 'id05', 'id06', 'id07', 'id08', 'id09', 'id10', 'id11']
@@ -193,12 +183,10 @@ Caixa 2 : ['id12', 'id13', 'id15', 'id16', 'id17', 'id19', 'id20', 'id21', 'id22
 
 ### 7. relatório final
 
-**Entrada:**
 ```
 Escolha uma opção: 5
 ```
 
-**Saída:**
 ```
 ===== RELATÓRIO FINAL =====
 Total de peças cadastradas: 23
@@ -209,12 +197,10 @@ Caixas fechadas: 2
 
 ### 8. encerrando o programa
 
-**Entrada:**
 ```
 Escolha uma opção: 0
 ```
 
-**Saída:**
 ```
 Encerrando o sistema. Até logo!
 ```
