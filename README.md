@@ -2,8 +2,6 @@
 
 Protótipo em Python para automatizar o controle de qualidade e o armazenamento de peças em uma linha de montagem, substituindo a inspeção manual por regras objetivas de aprovação e reprovação.
 
----
-
 ## Funcionamento do sistema
 
 O programa mantém três estruturas de dados em memória durante a execução:
@@ -189,8 +187,8 @@ Escolha uma opção: 4
 **Saída:**
 ```
 === CAIXAS FECHADAS ===
-Caixa 1 : ['id01', 'id02', 'id03', 'id04', 'id05', 'id06', 'id07', 'id08', 'id09', 'id10']
-Caixa 2 : ['id11', 'id14', 'id15', 'id16', 'id17', 'id19', 'id20', 'id21', 'id22', 'id23']
+Caixa 1 : ['id01', 'id03', 'id04', 'id05', 'id06', 'id07', 'id08', 'id09', 'id10', 'id11']
+Caixa 2 : ['id12', 'id13', 'id15', 'id16', 'id17', 'id19', 'id20', 'id21', 'id22', 'id23']
 ```
 
 ### Exemplo 7 — relatório final
