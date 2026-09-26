@@ -62,7 +62,7 @@ controle_qualidade.py
 1. Clone o repositório:
 
    ```bash
-   git clone [https://github.com/fm70br/job2608.git](https://github.com/fm70br/job2608.git)
+   git clone https://github.com/fm70br/job2608.git
    cd job2608
    ```
 
