@@ -87,6 +87,7 @@ def cadastrar_peca():
         # se a peca for reprovada
         if not aprovada:
             # avisa o usuario
+            print(f"\nPeça {peca['id']} REPROVADA")
             print("Motivo:", resultado)
 
     except ValueError:
@@ -154,8 +155,8 @@ def gerar_relatorio():
 def menu():
 
     while True:
-
-        print("\n1 - Cadastrar nova peça")
+        print("\n=== CONTROLE DE QUALIDADE DE PEÇAS ===")
+        print("1 - Cadastrar nova peça")
         print("2 - Listar peças")
         print("3 - Remover peça")
         print("4 - Listar caixas fechadas")
@@ -176,6 +177,7 @@ def menu():
         elif opcao == "5":
             gerar_relatorio()
         elif opcao == "0":
+            print("Encerrando o sistema. Até logo!")
             break
         else:
             print("Opção inválida.")
