@@ -104,9 +104,9 @@ Escolha uma opção:
 | **5** | Gera o relatório final: totais de: peças cadastradas, aprovadas, reprovadas, e quantidade de caixas fechadas |
 | **0** | Encerra o programa |
 
-## Exemplos de entradas e saídas
+## Exemplos
 
-### Exemplo 1 — cadastro de peça aprovada
+### 1. cadastro de peça aprovada
 
 **Entrada:**
 ```
@@ -123,7 +123,7 @@ Peça cadastrada com sucesso.
 Resultado: Aprovada
 ```
 
-### Exemplo 2 — cadastro de peça reprovada (com múltiplos motivos)
+### 2. cadastro de peça reprovada (com múltiplos motivos)
 
 **Entrada:**
 ```
@@ -140,7 +140,7 @@ Peça id02 REPROVADA
 Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
 ```
 
-### Exemplo 3 — fechamento automático de caixa (10ª peça aprovada)
+### 3. fechamento automático de caixa (10ª peça aprovada)
 
 **Saída ao cadastrar a 10ª peça aprovada em sequência:**
 ```
@@ -150,7 +150,7 @@ Peça cadastrada com sucesso.
 Resultado: Aprovada
 ```
 
-### Exemplo 4 — listar peças
+### 4. listar peças
 
 **Entrada:**
 ```
@@ -164,7 +164,7 @@ ID: id01 100.0 azul 15.0 | Status: Aprovada | Motivo: OK
 ID: id02 120.0 vermelha 25.0 | Status: Reprovada | Motivo: Peso fora do padrão, Cor inválida, Comprimento fora do padrão
 ```
 
-### Exemplo 5 — remover uma peça
+### 5. remover uma peça
 
 **Entrada:**
 ```
@@ -177,7 +177,7 @@ Informe o ID da peça: id02
 Peça removida com sucesso.
 ```
 
-### Exemplo 6 — listar caixas fechadas
+### 6. listar caixas fechadas
 
 **Entrada:**
 ```
@@ -191,7 +191,7 @@ Caixa 1 : ['id01', 'id03', 'id04', 'id05', 'id06', 'id07', 'id08', 'id09', 'id10
 Caixa 2 : ['id12', 'id13', 'id15', 'id16', 'id17', 'id19', 'id20', 'id21', 'id22', 'id23']
 ```
 
-### Exemplo 7 — relatório final
+### 7. relatório final
 
 **Entrada:**
 ```
@@ -207,7 +207,7 @@ Total reprovadas: 3
 Caixas fechadas: 2
 ```
 
-### Exemplo 9 — saindo do programa
+### 8. encerrando o programa
 
 **Entrada:**
 ```
