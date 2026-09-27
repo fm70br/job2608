@@ -177,7 +177,7 @@ def menu():
 
         opcao = input("Escolha uma opção: ")
 
-        # sem usar case (para manter retrocompatibilidade)
+        # sem usar match case (para manter retrocompatibilidade)
         if opcao == "1":
             cadastrar_peca()
         elif opcao == "2":
