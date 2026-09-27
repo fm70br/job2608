@@ -7,6 +7,10 @@
 #
 # 2026-09-25
 
+# limpa o terminal, 'cls' no windows e 'clear' no linux/macos
+import os
+os.system('cls' if os.name == 'nt' else 'clear')
+
 # listas 
 pecas = [] # todas as pecas
 caixas_fechadas = [] # lista de caixas fechadas
